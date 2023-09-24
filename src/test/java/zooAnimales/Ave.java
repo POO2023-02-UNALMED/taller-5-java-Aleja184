@@ -13,16 +13,13 @@ public class Ave extends Animal{
 	public Ave(String nombre,int edad,String habitat,String genero,String colorPlumas) {
 		super(nombre,edad,habitat,genero);
 		this.colorPlumas = colorPlumas;
-		listado.add(this);
+		Ave.listado.add(this);
 	}
 	
 	public ArrayList<Ave> getListado() {
 		return listado;
 	}
 
-	public void setListado(ArrayList<Ave> listado) {
-		this.listado = listado;
-	}
 
 	public int getHalcones() {
 		return halcones;
@@ -49,10 +46,11 @@ public class Ave extends Animal{
 	}
 
 	public Ave() {
-		halcones++;
+		this(null,0,null,null,null);
+		Ave.listado.add(this);
 	}
 	public static int cantidadAves() {
-		return halcones+aguilas;
+		return Ave.listado.size();
 	}
 	
 	public String movimiento() {

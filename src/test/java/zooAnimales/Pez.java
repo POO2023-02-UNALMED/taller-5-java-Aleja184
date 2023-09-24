@@ -15,15 +15,15 @@ public class Pez extends Animal{
 		super(nombre,edad,habitat,genero);
 		this.colorEscamas = colorEscamas;
 		this.cantidadAletas = cantidadAletas;
-		listado.add(this);
+		Pez.listado.add(this);
 	}
 	
 	public ArrayList<Pez> getListado() {
-		return listado;
+		return Pez.listado;
 	}
 
 	public void setListado(ArrayList<Pez> listado) {
-		this.listado = listado;
+		Pez.listado = listado;
 	}
 
 	public int getSalmones() {
@@ -59,11 +59,12 @@ public class Pez extends Animal{
 	}
 
 	public Pez() {
-		salmones++;
+		this(null,0,null,null,null,0);
+		Pez.listado.add(this);
 	}
 	
 	public static int cantidadPeces() {
-		return salmones+bacalaos;
+		return Pez.listado.size();
 	}
 	
 	public String movimiento() {

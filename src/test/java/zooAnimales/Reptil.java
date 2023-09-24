@@ -15,18 +15,17 @@ public class Reptil extends Animal{
 		super(nombre,edad,habitat,genero);
 		this.colorEscamas = colorEscamas;
 		this.largoCola = largoCola;
-		listado.add(this);
+		Reptil.listado.add(this);
 	}
 	
 	public Reptil() {
-		iguanas++;
+		this(null,0,null,null,null,0);
+		Reptil.listado.add(this);
 	}
 	public ArrayList<Reptil> getListado() {
-		return listado;
+		return Reptil.listado;
 	}
-	public void setListado(ArrayList<Reptil> listado) {
-		this.listado = listado;
-	}
+
 	public int getIguanas() {
 		return iguanas;
 	}
@@ -52,7 +51,7 @@ public class Reptil extends Animal{
 		this.largoCola = largoCola;
 	}
 	public static int cantidadReptiles() {
-		return serpientes+iguanas;
+		return Reptil.listado.size();
 	}
 	
 	public String movimiento() {

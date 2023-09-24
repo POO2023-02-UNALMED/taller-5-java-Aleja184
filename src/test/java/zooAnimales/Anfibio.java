@@ -19,7 +19,7 @@ public class Anfibio extends Animal{
 	}
 	
 	public ArrayList<Anfibio> getListado() {
-		return listado;
+		return Anfibio.listado;
 	}
 
 	public int getRanas() {
@@ -55,11 +55,12 @@ public class Anfibio extends Animal{
 	}
 
 	public Anfibio() {
-		ranas++;
+		this(null,0,null,null,null,false);
+		Anfibio.listado.add(this);
 	}
 	
 	public static int cantidadAnfibios() {
-		return ranas+salamandras;
+		return Anfibio.listado.size();
 	}
 	
 	public String movimiento() {

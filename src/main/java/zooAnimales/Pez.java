@@ -60,7 +60,6 @@ public class Pez extends Animal{
 
 	public Pez() {
 		this(null,0,null,null,null,0);
-		Pez.listado.add(this);
 	}
 	
 	public static int cantidadPeces() {
